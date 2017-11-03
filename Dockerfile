@@ -1,6 +1,6 @@
 FROM bitnami/minideb
 
-ENV CHROME_PORT=9222
+MAINTAINER Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/moulinjay>
 
 # Install deps + add Chrome Stable + purge all the things
 RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
