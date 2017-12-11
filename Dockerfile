@@ -1,6 +1,8 @@
 FROM femtopixel/google-chrome-headless:0.2.0
 
-MAINTAINER Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/moulinjay>
+COPY qemu-aarch64-static /usr/bin
+
+LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/MoulinJay>"
 
 ARG ARM=0
 USER root

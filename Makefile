@@ -1,10 +1,12 @@
 CACHE ?= --no-cache=1
 VERSION ?= 0.3.0
 FULLVERSION ?= ${VERSION}
-archs = arm32v7 amd64 i386
+archs ?= arm32v7 amd64 i386
 .PHONY: all build publish latest version
 all: build publish
-build:
+qemu-aarch64-static:
+	cp /usr/bin/qemu-aarch64-static .
+build: qemu-aarch64-static
 	$(foreach arch,$(archs), \
 		cat Dockerfile | sed "s/FROM femtopixel\/google-chrome-headless:0.2.0/FROM femtopixel\/google-chrome-headless:0.2.0-$(arch)/g" > .build; \
 		if [ $(arch) = arm32v7 ]; then \
