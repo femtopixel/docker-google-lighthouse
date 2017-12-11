@@ -3,7 +3,7 @@ VERSION ?= 0.3.0
 FULLVERSION ?= ${VERSION}
 archs ?= arm32v7 amd64 i386
 .PHONY: all build publish latest version
-all: build publish
+all: build publish latest
 qemu-aarch64-static:
 	cp /usr/bin/qemu-aarch64-static .
 build: qemu-aarch64-static
@@ -18,9 +18,7 @@ build: qemu-aarch64-static
 publish:
 	docker push femtopixel/google-lighthouse
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest2.yaml
-	cat manifest2.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}-debian/g" > manifest.yaml
+	cat manifest2.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest.yaml
 	manifest-tool push from-spec manifest.yaml
 latest: build
-	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest2.yaml
-	cat manifest2.yaml | sed "s/\$$FULLVERSION/latest/g" > manifest.yaml
-	manifest-tool push from-spec manifest.yaml
+	FULLVERSION=latest VERSION=${VERSION} make publish
