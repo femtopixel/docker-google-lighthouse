@@ -1,8 +1,8 @@
 CACHE ?= --no-cache=1
-VERSION ?= 0.3.0
+VERSION ?= v2.7.0
 FULLVERSION ?= ${VERSION}
 archs ?= arm32v7 amd64 i386
-.PHONY: all build publish latest version
+.PHONY: all build publish latest
 all: build publish latest
 qemu-aarch64-static:
 	cp /usr/bin/qemu-aarch64-static .
