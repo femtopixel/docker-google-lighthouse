@@ -6,7 +6,9 @@ archs ?= arm32v7 amd64 i386
 all: build publish latest
 qemu-aarch64-static:
 	cp /usr/bin/qemu-aarch64-static .
-build: qemu-aarch64-static
+qemu-arm-static:
+	cp /usr/bin/qemu-arm-static .
+build: qemu-aarch64-static qemu-arm-static
 	$(foreach arch,$(archs), \
 		cat Dockerfile | sed "s/FROM femtopixel\/google-chrome-headless:0.2.0/FROM femtopixel\/google-chrome-headless:0.2.0-$(arch)/g" > .build; \
 		if [ $(arch) = arm32v7 ]; then \

@@ -1,6 +1,7 @@
 FROM femtopixel/google-chrome-headless:0.2.0
 
 COPY qemu-aarch64-static /usr/bin
+COPY qemu-arm-static /usr/bin
 
 LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/MoulinJay>"
 
