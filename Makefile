@@ -1,6 +1,6 @@
 CACHE ?= --no-cache=1
-VERSION ?= v2.8.0
-FULLVERSION ?= ${VERSION}
+VERSION ?= v2.9.0
+FULLVERSION ?= v2.9.0
 archs ?= arm32v7 amd64 i386
 .PHONY: all build publish latest
 all: build publish latest
