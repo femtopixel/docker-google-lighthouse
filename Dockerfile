@@ -9,7 +9,7 @@ ARG ARM=0
 USER root
 
 # Install deps + add Chrome Stable + purge all the things
-RUN apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr -y && \
+RUN apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr --allow-unauthenticated -y && \
   if [ ${ARM-0} = 1 ]; then apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5; \ 
   apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32; fi && \
   rm -rf /var/lib/apt/lists/* && \
