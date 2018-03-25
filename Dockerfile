@@ -1,4 +1,4 @@
-FROM femtopixel/google-chrome-headless:0.2.0
+FROM femtopixel/google-chrome-headless:65.0.3325.181
 
 COPY qemu-aarch64-static /usr/bin
 COPY qemu-arm-static /usr/bin
