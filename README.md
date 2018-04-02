@@ -1,3 +1,5 @@
+![logo](logo.png)
+
 Google Lighthouse - Docker Image
 ================================
 
