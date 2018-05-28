@@ -14,9 +14,10 @@ RUN apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr --allo
   apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32; fi && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get autoclean && apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
-  curl -sSL https://deb.nodesource.com/setup_9.x | bash - && \
+  curl -sSL https://deb.nodesource.com/setup_10.x | bash - && \
   apt-get update && apt-get install -y nodejs --no-install-recommends && \
   if [ ${ARM-0} = 1 ]; then npm config set unsafe-perm true; fi && \
+  npm --global install npm && \
   npm --global install yarn && \
   apt-get purge --auto-remove -y curl gnupg && \
   rm -rf /var/lib/apt/lists/* && \
