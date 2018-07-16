@@ -40,3 +40,16 @@ Using the ever-awesome [Jessie Frazelle](https://twitter.com/jessfraz) SECCOMP p
 wget https://raw.githubusercontent.com/jfrazelle/dotfiles/master/etc/docker/seccomp/chrome.json -O ~/chrome.json
 docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports --security-opt seccomp=$HOME/chrome.json femtopixel/google-lighthouse <your_site_url>
 ```
+
+FAQ
+---
+
+* Error while writing files
+```
+Runtime error encountered: { Error: EACCES: permission denied, open '/home/chrome/reports/myawesome_site_admin_heavypage.report.json'
+errno: -13,
+code: 'EACCES',
+syscall: 'open',
+path: '/home/chrome/reports/myawesome_site_admin_heavypage.report.json' }
+```
+Make sure your folder has the write right for others (chmod o+w)
