@@ -4,18 +4,11 @@ FULLVERSION ?= v3.1.1
 archs ?= arm32v7 amd64 i386
 .PHONY: all build publish latest
 all: build publish latest
-qemu-aarch64-static:
-	cp /usr/bin/qemu-aarch64-static .
 qemu-arm-static:
 	cp /usr/bin/qemu-arm-static .
-build: qemu-aarch64-static qemu-arm-static
+build: qemu-arm-static
 	$(foreach arch,$(archs), \
-		cat Dockerfile | sed "s/FROM femtopixel\/google-chrome-headless:0.2.0/FROM femtopixel\/google-chrome-headless:0.2.0-$(arch)/g" > .build; \
-		if [ $(arch) = arm32v7 ]; then \
-			docker build -t femtopixel/google-lighthouse:${VERSION}-$(arch) --build-arg ARM=1 -f .build ${CACHE} .;\
-		else \
-			docker build -t femtopixel/google-lighthouse:${VERSION}-$(arch) --build-arg ARM=0 -f .build ${CACHE} .;\
-		fi;\
+		docker build -t femtopixel/google-lighthouse:${VERSION}-$(arch) -f Dockerfile.$(arch) ${CACHE} .;\
 	)
 publish:
 	docker push femtopixel/google-lighthouse
