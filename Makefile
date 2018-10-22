@@ -8,7 +8,7 @@ qemu-arm-static:
 	cp /usr/bin/qemu-arm-static .
 build: qemu-arm-static
 	$(foreach arch,$(archs), \
-		docker build -t femtopixel/google-lighthouse:${VERSION}-$(arch) -f Dockerfile.$(arch) ${CACHE} .;\
+		docker build -t femtopixel/google-lighthouse:${VERSION}-$(arch) -f Dockerfile.$(arch) --build-arg VERSION=${VERSION}-$(arch) ${CACHE} .;\
 	)
 publish:
 	docker push femtopixel/google-lighthouse
