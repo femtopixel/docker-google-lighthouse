@@ -1,6 +1,6 @@
 FROM femtopixel/google-chrome-headless:69.0.3497.100-amd64
 
-ARG VERSION=4.0.0-alpha.0
+ARG VERSION=v4.0.0-alpha.2-3.2.1
 
 LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/MoulinJay>"
 LABEL version="${VERSION}"
