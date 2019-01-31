@@ -1,4 +1,4 @@
-FROM femtopixel/google-chrome-headless:69.0.3497.100-i386
+FROM femtopixel/google-chrome-headless:72.0.3626.81-i386
 
 ARG VERSION=v4.1.0
  
@@ -13,7 +13,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
   apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr --allow-unauthenticated -y && \
   apt-get autoclean && apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
   curl -sSL https://deb.nodesource.com/setup_9.x | bash - && \
-  apt-get update && apt-get install -y nodejs --no-install-recommends && \
+  apt-get update && apt-get install -y nodejs npm --no-install-recommends && \
   npm --global install npm && \
   npm --global install yarn && \
   apt-get purge --auto-remove -y curl gnupg && \

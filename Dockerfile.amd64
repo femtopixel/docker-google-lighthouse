@@ -1,4 +1,4 @@
-FROM femtopixel/google-chrome-headless:69.0.3497.100-amd64
+FROM femtopixel/google-chrome-headless:72.0.3626.81-amd64
 
 ARG VERSION=v4.1.0
 
@@ -12,7 +12,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
   apt-get update && \
   apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr --allow-unauthenticated -y && \
   apt-get autoclean && apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
-  curl -sSL https://deb.nodesource.com/setup_10.x | bash - && \
+  curl -sSL https://deb.nodesource.com/setup_11.x | bash - && \
   apt-get update && apt-get install -y nodejs --no-install-recommends && \
   npm --global install npm && \
   npm --global install yarn && \
