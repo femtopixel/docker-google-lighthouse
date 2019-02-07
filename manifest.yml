@@ -7,11 +7,6 @@ manifests:
       variant: v7
       os: linux
   -
-    image: femtopixel/google-lighthouse:$VERSION-i386
-    platform:
-      architecture: 386
-      os: linux
-  -
     image: femtopixel/google-lighthouse:$VERSION-amd64
     platform:
       architecture: amd64

@@ -1,7 +1,7 @@
 CACHE ?= --no-cache=1
 VERSION ?= v4.1.0
 FULLVERSION ?= v4.1.0
-archs ?= arm32v7 amd64 i386
+archs ?= arm32v7 amd64
 .PHONY: all build publish latest
 all: build publish latest
 qemu-arm-static:

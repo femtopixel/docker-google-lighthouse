@@ -17,7 +17,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
   wget -O ./tmpkey "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3B4FE6ACC0B21F32" | apt-key add ./tmpkey; \
   apt-get autoclean && apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
   curl -sSL https://deb.nodesource.com/setup_11.x | bash - && \
-  apt-get update && apt-get install -y nodejs --no-install-recommends && \
+  apt-get install -y nodejs --no-install-recommends && \
   npm config set unsafe-perm true && \
   npm --global install npm && \
   npm --global install yarn && \
