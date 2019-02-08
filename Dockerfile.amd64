@@ -1,4 +1,4 @@
-FROM femtopixel/google-chrome-headless:72.0.3626.81-amd64
+FROM femtopixel/google-chrome-headless:71.0.3578.98-amd64
 
 ARG VERSION=v4.1.0
 
