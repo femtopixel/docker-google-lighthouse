@@ -30,6 +30,8 @@ For example, you can export as json with this command:
 docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports --cap-add=SYS_ADMIN femtopixel/google-lighthouse http://www.google.com --output json
 ```
 
+You can specify `CHROME_FLAGS` environment variable (`-e` parameter in your docker command) to be used in chrome-flags parameter. (default: `--headless --disable-gpu --no-sandbox`)
+
 Further reading on [Google Lighthouse](https://github.com/GoogleChrome/lighthouse#using-programmatically)
 
 Usage : Improved

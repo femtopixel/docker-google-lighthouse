@@ -30,6 +30,8 @@ COPY entrypoint.sh /usr/bin/entrypoint
 # Run Chrome non-privileged
 USER chrome
 
+ENV CHROME_FLAGS="--headless --disable-gpu --no-sandbox"
+
 VOLUME /home/chrome/reports
 
 # Drop to cli
