@@ -2,7 +2,7 @@ FROM femtopixel/google-chrome-headless:0.2.0-arm32v7
 
 COPY qemu-arm-static /usr/bin
 
-ARG VERSION=v4.3.0
+ARG VERSION=v4.3.1
  
 LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/MoulinJay>"
 LABEL version="${VERSION}"
