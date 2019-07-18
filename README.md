@@ -19,7 +19,7 @@ Usage
 -----
 
 ```
-docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports --cap-add=SYS_ADMIN femtopixel/google-lighthouse <your_site_url> <optional_args>
+docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports femtopixel/google-lighthouse <your_site_url> <optional_args>
 ```
 
 With `<you_site_url>` url to your site (e.g. http://www.google.com). You can pass args **AFTER** the `url` if you want to.
@@ -27,22 +27,12 @@ With `<you_site_url>` url to your site (e.g. http://www.google.com). You can pas
 For example, you can export as json with this command:
 
 ```
-docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports --cap-add=SYS_ADMIN femtopixel/google-lighthouse http://www.google.com --output json
+docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports femtopixel/google-lighthouse http://www.google.com --output json
 ```
 
 You can specify `CHROME_FLAGS` environment variable (`-e` parameter in your docker command) to be used in chrome-flags parameter. (default: `--headless --disable-gpu --no-sandbox`)
 
 Further reading on [Google Lighthouse](https://github.com/GoogleChrome/lighthouse#using-programmatically)
-
-Usage : Improved
-----------------
-
-Using the ever-awesome [Jessie Frazelle](https://twitter.com/jessfraz) SECCOMP profile for Chrome, we don't have to use the hammer that is SYS_ADMIN:
-
-```
-wget https://raw.githubusercontent.com/jfrazelle/dotfiles/master/etc/docker/seccomp/chrome.json -O ~/chrome.json
-docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/reports --security-opt seccomp=$HOME/chrome.json femtopixel/google-lighthouse <your_site_url>
-```
 
 FAQ
 ---
