@@ -1,6 +1,6 @@
 FROM femtopixel/google-chrome-headless
 
-ARG VERSION=v5.4.0
+ARG VERSION=v5.5.0
 
 LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/MoulinJay>"
 LABEL version="${VERSION}"
