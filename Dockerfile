@@ -12,7 +12,7 @@ RUN rm -rf /var/lib/apt/lists/* && \
   apt-get update && \
   apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr --allow-unauthenticated -y && \
   apt-get autoclean && apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
-  curl -sSL https://deb.nodesource.com/setup_11.x | bash - && \
+  curl -sSL https://deb.nodesource.com/setup_12.x | bash - && \
   apt-get install -y nodejs --no-install-recommends && \
   npm --global install npm && \
   npm --global install yarn && \
