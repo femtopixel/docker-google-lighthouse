@@ -34,7 +34,7 @@ docker run --rm --name lighthouse -it -v /path/to/your/report:/home/chrome/repor
 
 You can specify `CHROME_FLAGS` environment variable (`-e` parameter in your docker command) to be used in chrome-flags parameter. (default: `--headless --disable-gpu --no-sandbox`)
 
-Further reading on [Google Lighthouse](https://github.com/GoogleChrome/lighthouse#using-programmatically)
+Further reading on [Google Lighthouse](https://github.com/GoogleChrome/lighthouse/blob/master/docs/readme.md#using-programmatically)
 
 FAQ
 ---
