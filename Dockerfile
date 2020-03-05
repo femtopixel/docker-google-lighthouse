@@ -2,7 +2,7 @@ FROM femtopixel/google-chrome-headless
 
 ARG VERSION=v5.6.0
 
-LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <http://twitter.com/MoulinJay>"
+LABEL maintainer="Jay MOULIN <https://jaymoulin.me/femtopixel/docker-google-lighthouse> <http://twitter.com/MoulinJay>"
 LABEL version="${VERSION}"
 
 USER root
