@@ -5,4 +5,4 @@ all: build publish
 build:
 	docker build -t femtopixel/google-lighthouse:${VERSION} -t femtopixel/google-lighthouse --build-arg VERSION=${VERSION} ${CACHE} .
 publish:
-	docker push femtopixel/google-lighthouse
+	docker push femtopixel/google-lighthouse -a
