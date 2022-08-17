@@ -1,5 +1,5 @@
 CACHE ?= --no-cache=1
-VERSION ?= v9.6.5
+VERSION ?= v9.6.6
 .PHONY: all build publish latest
 all: build publish
 build:
