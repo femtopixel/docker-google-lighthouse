@@ -1,6 +1,6 @@
 FROM femtopixel/google-chrome-headless
 
-ARG VERSION=v10.0.2
+ARG VERSION=v10.1.0
 
 LABEL maintainer="Jay MOULIN <https://jaymoulin.me/femtopixel/docker-google-lighthouse> <http://twitter.com/MoulinJay>"
 LABEL version="${VERSION}"
