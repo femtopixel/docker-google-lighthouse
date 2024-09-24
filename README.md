@@ -54,3 +54,7 @@ syscall: 'open',
 path: '/home/chrome/reports/myawesome_site_admin_heavypage.report.json' }
 ```
 Make sure your folder has the write right for others (chmod o+w)
+
+If the issue still occurs, you may want to add `--disable-shm-dev-usage` Chrome flag (cf. https://stackoverflow.com/questions/69173469/meaning-of-selenium-chromeoptions/69175552#69175552 and https://issues.chromium.org/issues/40517415; thx @kevinbreit - https://github.com/femtopixel/docker-google-lighthouse/issues/25)
+
+You can add this flag with the `-e` flag in your docker command `docker run --rm --name lighthouse -it -e CHROME_FLAGS="--headless --disable-gpu --no-sandbox --ignore-certificate-errors --disable-dev-shm-usage --allow-insecure-localhost --silent" -v /path/to/your/report:/home/chrome/reports femtopixel/google-lighthouse http://www.google.com --output json`
