@@ -12,12 +12,12 @@ RUN rm -rf /var/lib/apt/lists/* && \
   apt-get update && \
   apt-get remove gnupg -y && apt-get install --reinstall gnupg2 dirmngr --allow-unauthenticated -y && \
   apt-get autoclean && apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg git --no-install-recommends && \
-  curl -sSL https://deb.nodesource.com/setup_20.x | bash - && \
+  curl -sSL https://deb.nodesource.com/setup_22.x | bash - && \
   apt-get install -y nodejs --no-install-recommends && \
-  npm --global install npm && \
+  npm --global install npm@v10.9.8 && \
   npm --global install yarn && \
   rm -rf /var/lib/apt/lists/* && \
-  npm install --global lighthouse && \
+  npm install --global lighthouse@${VERSION} && \
   apt-get purge --auto-remove -y curl gnupg git && \
   mkdir -p /home/chrome/reports && chown -R chrome:chrome /home/chrome
 
